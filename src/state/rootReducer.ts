@@ -1,12 +1,13 @@
 import { combineReducers, ReducersMapObject } from "redux";
-import { WorkExperience, workExperienceReducer } from "./workExperienceReducer";
+import { WordMap } from "./words/wordState";
+import { wordDuck } from "./words/wordDuck";
 
 export interface AppState {
-    workExperience: WorkExperience[];
+    words: WordMap;
 };
 
 const appReducer: ReducersMapObject<AppState> = {
-    workExperience: workExperienceReducer
+    words: wordDuck.reducer
 };
 
 export default combineReducers(appReducer);
